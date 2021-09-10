@@ -10,9 +10,12 @@
 			$contents .= "
 			<tr>
 				<td>".$row['id']."</td>
-				<td>".$row['firstname']."</td>
-				<td>".$row['lastname']."</td>
-				<td>".$row['address']."</td>
+				<td>".$row['title']."</td>
+				<td>".$row['isbn']."</td>
+				<td>".$row['author']."</td>
+				<td>".$row['publisher']."</td>
+				<td>".$row['year_published']."</td>
+				<td>".$row['category']."</td>
 			</tr>
 			";
 		}
@@ -24,9 +27,9 @@
 		// 	$contents .= "
 		// 	<tr>
 		// 		<td>".$row['id']."</td>
-		// 		<td>".$row['firstname']."</td>
-		// 		<td>".$row['lastname']."</td>
-		// 		<td>".$row['address']."</td>
+		// 		<td>".$row['title']."</td>
+		// 		<td>".$row['isbn']."</td>
+		// 		<td>".$row['author']."</td>
 		// 	</tr>
 		// 	";
 		// }
@@ -57,9 +60,12 @@
       	<table border="1" cellspacing="0" cellpadding="3">  
            <tr>  
                 <th width="5%">ID</th>
-				<th width="20%">Firstname</th>
-				<th width="20%">Lastname</th>
-				<th width="55%">Address</th> 
+				<th width="20%">title</th>
+				<th width="20%">isbn</th>
+				<th width="55%">author</th> 
+				<th width="20%">publisher</th>
+				<th width="20%">year_published</th>
+				<th width="20%">category</th>
            </tr>  
       ';  
     $content .= generateRow();  

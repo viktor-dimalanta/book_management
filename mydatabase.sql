@@ -30,16 +30,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `books` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
-  `address` text NOT NULL
+  `title` varchar(30) NOT NULL,
+  `isbn` varchar(30) NOT NULL,
+  `author` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`id`, `firstname`, `lastname`, `address`) VALUES
+INSERT INTO `books` (`id`, `title`, `isbn`, `author`) VALUES
 (1, 'neovic', 'devierte', 'silay city'),
 (2, 'gemalyn', 'cepe', 'carmen, bohol'),
 (3, 'lee', 'apilinga', 'bacolod'),

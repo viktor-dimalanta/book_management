@@ -33,12 +33,16 @@
 			border: 0;
 			background-color: unset;
 		}
+
+		body > div.container > div > div{
+			margin-left:0px;
+		}
 	</style>
 </head>
 <body>
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-sm-12 col-sm-offset-2">
 			<div class="row">
 			<?php
 				if(isset($_SESSION['error'])){
@@ -71,6 +75,9 @@
 				<button type="button" class="btn btn-info" id="search">
 					Search
 				</button>
+				<button type="button" class="btn btn-danger" id="reset">
+					Reset
+				</button>
 				<br><br>
 				<div class="col-lg-12" style="padding: 0px;">
     		        <div class="float-left col-lg-10" style="padding: 0px;">
@@ -96,9 +103,12 @@
 				<table id="myTable" class="table table-bordered table-striped">
 					<thead>
 						<th>ID</th>
-						<th>Firstname</th>
-						<th>Lastname</th>
-						<th>Address</th>
+						<th>title</th>
+						<th>isbn</th>
+						<th>author</th>
+						<th>publisher</th>
+						<th>year published</th>
+						<th>category</th>
 						<th>Action</th>
 					</thead>
 					<tbody>
@@ -112,9 +122,12 @@
 								echo 
 								"<tr>
 									<td>".$row['id']."</td>
-									<td>".$row['firstname']."</td>
-									<td>".$row['lastname']."</td>
-									<td>".$row['address']."</td>
+									<td>".$row['title']."</td>
+									<td>".$row['isbn']."</td>
+									<td>".$row['author']."</td>
+									<td>".$row['publisher']."</td>
+									<td>".$row['year_published']."</td>
+									<td>".$row['category']."</td>
 									<td>
 										<a href='#edit_".$row['id']."' class='btn btn-success btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-edit'></span> Edit</a>
 										<a href='#delete_".$row['id']."' class='btn btn-danger btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-trash'></span> Delete</a>
@@ -130,9 +143,9 @@
 							// 	echo
 							// 	"<tr>
 							// 		<td>".$row['id']."</td>
-							// 		<td>".$row['firstname']."</td>
-							// 		<td>".$row['lastname']."</td>
-							// 		<td>".$row['address']."</td>
+							// 		<td>".$row['title']."</td>
+							// 		<td>".$row['isbn']."</td>
+							// 		<td>".$row['author']."</td>
 							// 		<td>
 							// 			<a href='#edit_".$row['id']."' class='btn btn-success btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-edit'></span> Edit</a>
 							// 			<a href='#delete_".$row['id']."' class='btn btn-danger btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-trash'></span> Delete</a>
@@ -177,7 +190,14 @@ $(document).ready(function(){
 		oTable.search($("#searchField").val()).draw() ;
 	});
 
-	table.search("").draw();
+	$( "#reset" ).click(function() {
+		//oTable.draw(true);
+		//oTable.search().draw() ;
+		location.reload();
+
+	});
+
+	//table.search("").draw(true);
 });
 </script>
 </body>

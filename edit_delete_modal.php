@@ -12,26 +12,50 @@
 				<input type="hidden" class="form-control" name="id" value="<?php echo $row['id']; ?>">
 				<div class="row form-group">
 					<div class="col-sm-2">
-						<label class="control-label modal-label">Firstname:</label>
+						<label class="control-label modal-label">title:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="firstname" value="<?php echo $row['firstname']; ?>">
+						<input type="text" class="form-control" name="title" value="<?php echo $row['title']; ?>">
 					</div>
 				</div>
 				<div class="row form-group">
 					<div class="col-sm-2">
-						<label class="control-label modal-label">Lastname:</label>
+						<label class="control-label modal-label">isbn:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="lastname" value="<?php echo $row['lastname']; ?>">
+						<input type="text" class="form-control" name="isbn" value="<?php echo $row['isbn']; ?>">
 					</div>
 				</div>
 				<div class="row form-group">
 					<div class="col-sm-2">
-						<label class="control-label modal-label">Address:</label>
+						<label class="control-label modal-label">author:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="address" value="<?php echo $row['address']; ?>">
+						<input type="text" class="form-control" name="author" value="<?php echo $row['author']; ?>">
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">publisher:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="publisher" value="<?php echo $row['publisher']; ?>">
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">year_published:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="year_published" value="<?php echo $row['year_published']; ?>">
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">category:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="category" value="<?php echo $row['category']; ?>">
 					</div>
 				</div>
             </div> 
@@ -56,7 +80,7 @@
             </div>
             <div class="modal-body">	
             	<p class="text-center">Are you sure you want to Delete</p>
-				<h2 class="text-center"><?php echo $row['firstname'].' '.$row['lastname']; ?></h2>
+				<h2 class="text-center"><?php echo $row['title'].' '.$row['isbn']; ?></h2>
 			</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>

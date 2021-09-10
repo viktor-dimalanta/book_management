@@ -4,10 +4,13 @@
 
 	if(isset($_POST['edit'])){
 		$id = $_POST['id'];
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
-		$address = $_POST['address'];
-		$sql = "UPDATE books SET firstname = '$firstname', lastname = '$lastname', address = '$address' WHERE id = '$id'";
+		$title = $_POST['title'];
+		$isbn = $_POST['isbn'];
+		$publisher = $_POST['publisher'];
+		$year_published = $_POST['year_published'];
+		$category = $_POST['category'];
+		$author = $_POST['author'];
+		$sql = "UPDATE books SET title = '$title', isbn = '$isbn', author = '$author', publisher = '$publisher', year_published = '$year_published', category = '$category' WHERE id = '$id'";
 
 		//use for MySQLi OOP
 		if($conn->query($sql)){

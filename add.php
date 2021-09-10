@@ -3,10 +3,13 @@
 	include_once('connection.php');
 
 	if(isset($_POST['add'])){
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
-		$address = $_POST['address'];
-		$sql = "INSERT INTO books (firstname, lastname, address) VALUES ('$firstname', '$lastname', '$address')";
+		$title = $_POST['title'];
+		$isbn = $_POST['isbn'];
+		$author = $_POST['author'];
+		$publisher = $_POST['publisher'];
+		$year_published = $_POST['year_published'];
+		$category = $_POST['category'];
+		$sql = "INSERT INTO books (title, isbn, author,publisher,year_published,category) VALUES ('$title', '$isbn', '$author','$publisher','$year_published','$category')";
 
 		//use for MySQLi OOP
 		if($conn->query($sql)){
