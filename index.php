@@ -81,10 +81,10 @@
 				<br><br>
 				<div class="col-lg-12" style="padding: 0px;">
     		        <div class="float-left col-lg-10" style="padding: 0px;">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#create-book" style="width: 175px;">
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" id="recent-book" style="width: 175px;">
         					Recent
         				</button>
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#create-book" style="width: 175px;">
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" id="archive-book" style="width: 175px;">
         					Archive
         				</button>
     		        </div>
@@ -109,12 +109,13 @@
 						<th>publisher</th>
 						<th>year published</th>
 						<th>category</th>
+						<th>archived</th>
 						<th>Action</th>
 					</thead>
 					<tbody>
 						<?php
 							include_once('connection.php');
-							$sql = "SELECT * FROM books";
+							$sql = "SELECT * FROM books ";
 
 							//use for MySQLi-OOP
 							$query = $conn->query($sql);
@@ -128,33 +129,15 @@
 									<td>".$row['publisher']."</td>
 									<td>".$row['year_published']."</td>
 									<td>".$row['category']."</td>
+									<td>".$row['archived']."</td>
 									<td>
 										<a href='#edit_".$row['id']."' class='btn btn-success btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-edit'></span> Edit</a>
 										<a href='#delete_".$row['id']."' class='btn btn-danger btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-trash'></span> Delete</a>
+										<input type='submit' class='archive btn btn-warning btn-sm' data-id=".$row['id']." value='archive' />
 									</td>
 								</tr>";
 								include('edit_delete_modal.php');
 							}
-							/////////////////
-
-							//use for MySQLi Procedural
-							// $query = mysqli_query($conn, $sql);
-							// while($row = mysqli_fetch_assoc($query)){
-							// 	echo
-							// 	"<tr>
-							// 		<td>".$row['id']."</td>
-							// 		<td>".$row['title']."</td>
-							// 		<td>".$row['isbn']."</td>
-							// 		<td>".$row['author']."</td>
-							// 		<td>
-							// 			<a href='#edit_".$row['id']."' class='btn btn-success btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-edit'></span> Edit</a>
-							// 			<a href='#delete_".$row['id']."' class='btn btn-danger btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-trash'></span> Delete</a>
-							// 		</td>
-							// 	</tr>";
-							// 	include('edit_delete_modal.php');
-							// }
-							/////////////////
-
 						?>
 					</tbody>
 				</table>
@@ -174,12 +157,11 @@ $(document).ready(function(){
 	//inialize datatable
     var oTable = $('#myTable').DataTable({
         "ordering": true, // false to disable sorting (or any other option)
-        // "bPaginate": false,
-        // "bFilter": false,
-        // "bInfo": false
 		pagingType: 'numbers',
-		pageLength: 5
-        });
+		pageLength: 10
+    });
+
+	oTable.columns( [7] ).visible( false );
 
     //hide alert
     $(document).on('click', '.close', function(){
@@ -191,13 +173,30 @@ $(document).ready(function(){
 	});
 
 	$( "#reset" ).click(function() {
-		//oTable.draw(true);
-		//oTable.search().draw() ;
 		location.reload();
-
 	});
 
-	//table.search("").draw(true);
+	$( '.archive').click(function() {
+		var el = this;
+		var id = $(el).data('id');
+		$.ajax({
+		url: "ajax_update.php",
+		data: { id: id },
+		context: document.body
+		}).done(function() {
+			alert('archive successfully!');
+		});
+			return false;
+	});
+
+	$( "#recent-book" ).click(function() {
+		//oTable.search($("#searchField").val()).draw() ;
+		oTable.column(7).search(1).draw();
+	});
+
+	$( "#archive-book" ).click(function() {	
+		oTable.column(7).search(0).draw();
+	});
 });
 </script>
 </body>
