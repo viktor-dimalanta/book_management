@@ -1,6 +1,7 @@
 # Books Management System
 - a simple booking catalog management system
 - developed by Viktor Angelo Dimalanta, MSIT
+- this will be used for assessment for August99 company
 
 #Technology Used
 - PHP
