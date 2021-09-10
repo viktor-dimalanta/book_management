@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `members`
+-- Table structure for table `books`
 --
 
-CREATE TABLE `members` (
+CREATE TABLE `books` (
   `id` int(11) NOT NULL,
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE `members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `members`
+-- Dumping data for table `books`
 --
 
-INSERT INTO `members` (`id`, `firstname`, `lastname`, `address`) VALUES
+INSERT INTO `books` (`id`, `firstname`, `lastname`, `address`) VALUES
 (1, 'neovic', 'devierte', 'silay city'),
 (2, 'gemalyn', 'cepe', 'carmen, bohol'),
 (3, 'lee', 'apilinga', 'bacolod'),
@@ -51,9 +51,9 @@ INSERT INTO `members` (`id`, `firstname`, `lastname`, `address`) VALUES
 --
 
 --
--- Indexes for table `members`
+-- Indexes for table `books`
 --
-ALTER TABLE `members`
+ALTER TABLE `books`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -61,9 +61,9 @@ ALTER TABLE `members`
 --
 
 --
--- AUTO_INCREMENT for table `members`
+-- AUTO_INCREMENT for table `books`
 --
-ALTER TABLE `members`
+ALTER TABLE `books`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 

@@ -3569,7 +3569,7 @@ $Id: ChangeLog,v 1.257 2010/09/19 13:15:07 Stevan_White Exp $
 
 	Gurmukhi: filled range in Serif, taking glyphs from the original
 	Punjabi font by Hardip Singh Pannu
-	http://members.aol.com/hspannu/punjabi.html   (file pb_win95.exe)
+	http://books.aol.com/hspannu/punjabi.html   (file pb_win95.exe)
 
 2008-05-12 Steve White
 	* FreeSans.sfd, FreeSerifBold.sfd, FreeSerifBoldItalic.sfd:
@@ -6232,7 +6232,7 @@ $Id: ChangeLog,v 1.257 2010/09/19 13:15:07 Stevan_White Exp $
 
 	* sfd/FreeSerif.sfd - Anshuman Pandey has only converted Gurmukhi
 	from TrueType to Metafont; the original author of Gurkmukhi font
-	is Hardip Singh Pannu <http://members.aol.com/hspannu/punjabi.html>.
+	is Hardip Singh Pannu <http://books.aol.com/hspannu/punjabi.html>.
 	Got the permission from him to include the Gurmukhi glyph set.
 
 2002-03-08  Primoz Peterlin  <primoz.peterlin@biofiz.mf.uni-lj.si>

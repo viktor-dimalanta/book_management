@@ -82,7 +82,7 @@
         				</button>
     		        </div>
     		        <div class="float-right col-lg-2" style="float: right;margin-right: -65px;">
-        				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#create-book">
+        				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addnew">
         					Add
         				</button>
     		        </div>
@@ -104,7 +104,7 @@
 					<tbody>
 						<?php
 							include_once('connection.php');
-							$sql = "SELECT * FROM members";
+							$sql = "SELECT * FROM books";
 
 							//use for MySQLi-OOP
 							$query = $conn->query($sql);
@@ -164,7 +164,8 @@ $(document).ready(function(){
         // "bPaginate": false,
         // "bFilter": false,
         // "bInfo": false
-		pagingType: 'numbers'
+		pagingType: 'numbers',
+		pageLength: 5
         });
 
     //hide alert

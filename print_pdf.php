@@ -2,7 +2,7 @@
 	function generateRow(){
 		$contents = '';
 		include_once('connection.php');
-		$sql = "SELECT * FROM members";
+		$sql = "SELECT * FROM books";
 
 		//use for MySQLi OOP
 		$query = $conn->query($sql);
@@ -53,7 +53,7 @@
     $content = '';  
     $content .= '
       	<h2 align="center">Generated PDF using TCPDF</h2>
-      	<h4>Members Table</h4>
+      	<h4>Books Table</h4>
       	<table border="1" cellspacing="0" cellpadding="3">  
            <tr>  
                 <th width="5%">ID</th>
@@ -65,7 +65,7 @@
     $content .= generateRow();  
     $content .= '</table>';  
     $pdf->writeHTML($content);  
-    $pdf->Output('members.pdf', 'I');
+    $pdf->Output('books.pdf', 'I');
 	
 
 ?>

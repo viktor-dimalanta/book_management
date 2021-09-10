@@ -7,17 +7,17 @@
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
 		$address = $_POST['address'];
-		$sql = "UPDATE members SET firstname = '$firstname', lastname = '$lastname', address = '$address' WHERE id = '$id'";
+		$sql = "UPDATE books SET firstname = '$firstname', lastname = '$lastname', address = '$address' WHERE id = '$id'";
 
 		//use for MySQLi OOP
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Member updated successfully';
+			$_SESSION['success'] = 'Book updated successfully';
 		}
 		///////////////
 
 		//use for MySQLi Procedural
 		// if(mysqli_query($conn, $sql)){
-		// 	$_SESSION['success'] = 'Member updated successfully';
+		// 	$_SESSION['success'] = 'Book updated successfully';
 		// }
 		///////////////
 		
